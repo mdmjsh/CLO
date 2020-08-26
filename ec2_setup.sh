@@ -13,4 +13,8 @@ pyspark --master spark://0.0.0.0:7077 --packages  org.apache.hadoop:hadoop-aws:2
 
 # Tunnel cluster to local machine for jupyter
 lsof -ti:8888 | xargs kill -9
-ssh -i spark_cluster.pem -4 -fN -L 8888:localhost:8888 ec2-user@ec2-34-250-89-10.eu-west-1.compute.amazonaws.com
+ssh -i spark_cluster.pem -4 -fN -L 8888:localhost:8888 ec2-user@ec2-34-244-39-108.eu-west-1.compute.amazonaws.com
+
+
+sudo  pip install virtualenvwrapper
+sudo yum install python36 python36-pip

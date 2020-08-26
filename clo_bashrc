@@ -1,0 +1,20 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+# User specific aliases and functions
+export HADOOP_LIBEXEC_DIR='/home/ec2-user/hadoop/libexec'
+export SPARK_HOME='/home/ec2-user/spark'
+export PYSPARK_PYTHON=/usr/bin/python3
+export WORKON_HOME=$HOME/.virtualenvs
+export AWS_ACCESS_KEY_ID=AKIAT6VGICDBXRWLOQMT
+export AWS_SECRET_ACCESS_KEY=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
+
+export PYTHONPATH=$SPARK_HOME/python:$PYTHONPATH
+#export PYSPARK_PYTHON=~/.virtualenvs/clo/bin/python
+export PYSPARK_DRIVER_PYTHON=jupyter
+export PYSPARK_DRIVER_PYTHON_OPTS='notebook --no-browser'
+source /usr/local/bin/virtualenvwrapper.sh
