@@ -4,7 +4,7 @@ notebook_start:
 exec_pyspark_container:
 	 docker exec -it `docker container ls  --format='{{json .}}' | jq -r .ID` bash
 
-MASTER_IP=ec2-54-171-74-236.eu-west-1.compute.amazonaws.com
+MASTER_IP=[ec2-master-ip]
 
 NODES=10
 
@@ -58,13 +58,6 @@ flintrock_destroy:
 
 make tunnel:
 	lsof -ti:8888 | xargs kill -9
-	ssh -i spark_cluster.pem -4 -fN -L 8888:localhost:8888 ec2-user@ec2-34-255-29-19.eu-west-1.compute.amazonaws.com
+	ssh -i spark_cluster.pem -4 -fN -L 8888:localhost:8888 [ec2-master-url]
 
-
-# ssh -i "spark_cluster.pem" root@ec2-34-255-29-19.eu-west-1.compute.amazonaws.com - 10 node new
-# http://ec2-34-255-29-19.eu-west-1.compute.amazonaws.com:8080
-
-
-# ssh -i "spark_cluster.pem" ec2-user@ec2-34-244-39-108.eu-west-1.compute.amazonaws.com - q2
-# http://ec2-34-244-39-108.eu-west-1.compute.amazonaws.com:8080
 
